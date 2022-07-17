@@ -1,9 +1,11 @@
 import React, { PureComponent } from "react";
+
 import Counter from "../components/Counter";
 
 class CounterContainer extends PureComponent {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+
     this.state = {
       countValue: 0,
       isEven: true,
@@ -31,7 +33,7 @@ class CounterContainer extends PureComponent {
   handleReset = () => {
     this.setState({
       countValue: this.state.countValue === 0,
-      isEven: this.state.isEven === 0,
+      isEven: this.state.isEven === false,
     });
   };
   render() {

@@ -1,10 +1,13 @@
-import React from "react";
-
 import styles from "./index.module.scss";
+import PropTypes from "prop-types";
 
 const Counter = ({ countValue, isEven, onIncrement, onDecrement, onReset }) => {
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={`${styles.wrapper} ${
+        countValue % 2 === 0 ? styles.yellowColor : styles.blueColor
+      } `}
+    >
       <div className={styles.screen}>{countValue}</div>
       <div className={styles.screen}>{isEven}</div>
       <div className={styles.buttonsArea}>
@@ -22,4 +25,11 @@ const Counter = ({ countValue, isEven, onIncrement, onDecrement, onReset }) => {
   );
 };
 
+Counter.propTypes = {
+  //   countValue: PropTypes.number,
+  //   isEven: PropTypes.bool,
+  onDecrement: PropTypes.func,
+  onReset: PropTypes.func,
+  onIncrement: PropTypes.func,
+};
 export default Counter;

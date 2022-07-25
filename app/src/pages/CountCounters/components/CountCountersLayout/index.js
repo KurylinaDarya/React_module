@@ -10,7 +10,6 @@ const CountCountersLayout = ({
   handleCounterRemove,
   handleCounterCreate,
   handleCounterReset,
-  sumCounters,
   totalSum,
 }) => {
   return (
@@ -32,7 +31,7 @@ const CountCountersLayout = ({
           />
         ))}
       </div>
-      <div className={styles.screen}>Counters:{sumCounters}</div>
+      <div className={styles.screen}>Counters:{counters.lenght}</div>
       <div className={styles.screen}>Total:{totalSum}</div>
     </div>
   );

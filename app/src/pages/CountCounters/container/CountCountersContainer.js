@@ -38,14 +38,6 @@ const CountCountersContainer = () => {
     setCounters([]);
   }, []);
 
-  //   const sumCounters = useCallback(() => {
-  //     setCounters((state) => {
-  //       const countersCopy = [...state];
-
-  //       return countersCopy.length;
-  //     });
-  //   }, []);
-
   //   const totalSum = useCallback(() => {
   //     setCounters((state) => {
   //       const countersCopy = [...state];

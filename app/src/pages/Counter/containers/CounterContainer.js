@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 
-import Counter from "../components/Counter";
+import Counter from "../../../components/Counter";
 
 class CounterContainer extends PureComponent {
   constructor() {
@@ -12,30 +12,36 @@ class CounterContainer extends PureComponent {
     };
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.countValue !== this.state.countValue) {
+      this.setState({ isEven: this.state.countValue % 2 === 0 });
+    }
+  }
+
   handleIncrement = () => {
     this.setState((state) => {
       const incremetedValue = state.countValue + 1;
       return {
         countValue: incremetedValue,
-        isEven: incremetedValue % 2 === 0 ? `even` : `odd`,
-      };
-    });
-  };
-  handleDecrement = () => {
-    this.setState((prevState) => {
-      const decrementedValue = Math.max(prevState.countValue - 1, 0);
-      return {
-        countValue: decrementedValue,
-        isEven: decrementedValue % 2 === 0 ? `even` : `odd`,
       };
     });
   };
   handleReset = () => {
     this.setState({
-      countValue: this.state.countValue === 0,
-      isEven: this.state.isEven === false,
+      countValue: 0,
     });
   };
+  handleDecrement = () => {
+    if (this.state.countValue > 0) {
+      this.setState((state) => {
+        const decrementedValue = state.countValue - 1;
+        return {
+          countValue: decrementedValue,
+        };
+      });
+    }
+  };
+
   render() {
     return (
       <Counter

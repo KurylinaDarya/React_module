@@ -9,30 +9,36 @@ import { ROUTE_NAMES } from "../../router/routeNames";
 
 const Counter = ({
   countValue,
-  isEven,
-  onIncrement,
   onDecrement,
   onReset,
+  onIncrement,
   onRemove,
+  isEven,
   id,
 }) => {
   return (
     <div
       className={styles.wrapper}
-      style={{ background: isEven ? "#78d3d2" : "#cce48e" }}
+      style={{ background: isEven ? "#bccefb" : "c6beee" }}
     >
       <div className={styles.screen}>{countValue}</div>
       {countValue > 0 && (
         <div className={styles.screen}>{isEven ? "even" : "odd"}</div>
       )}
       <div className={styles.buttonsArea}>
-        <button onClick={onDecrement} className={styles.controlButton}>
+        <button
+          onClick={() => onDecrement(id)}
+          className={styles.controlButton}
+        >
           -
         </button>
-        <button onClick={onReset} className={styles.controlButton}>
+        <button onClick={() => onReset(id)} className={styles.controlButton}>
           Reset
         </button>
-        <button onClick={onIncrement} className={styles.controlButton}>
+        <button
+          onClick={() => onIncrement(id)}
+          className={styles.controlButton}
+        >
           +
         </button>
       </div>

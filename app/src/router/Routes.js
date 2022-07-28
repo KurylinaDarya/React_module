@@ -4,7 +4,7 @@ import { ROUTE_NAMES } from "./routeNames";
 import Home from "../pages/Home";
 import CounterContainer from "../pages/Counter/containers/CounterContainer";
 import FunctionalCounterContainer from "../pages/FunctionalCounter/containers/FunctionalCounterContainer";
-import CountCountersContainer from "../pages/CountCounters/container/CountCountersContainer";
+import CountersManagerContainer from "../pages/CountersManager/container/CountersManagerContainer";
 
 const Router = () => {
   return (
@@ -16,8 +16,8 @@ const Router = () => {
         element={<FunctionalCounterContainer />}
       />
       <Route
-        path={ROUTE_NAMES.COUNT_COUNTERS}
-        element={<CountCountersContainer />}
+        path={ROUTE_NAMES.COUNTERS_MANAGER}
+        element={<CountersManagerContainer />}
       />
     </Routes>
   );

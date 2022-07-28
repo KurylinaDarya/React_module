@@ -3,10 +3,6 @@ import { useState, useCallback } from "react";
 export const useCounter = (defaultValue, allNegative = false) => {
   const [count, setCount] = useState(defaultValue);
 
-  const handleIncrement = useCallback(() => {
-    setCount((state) => state + 1);
-  }, []);
-
   const handleDecrement = useCallback(() => {
     setCount((state) => {
       const value = state <= 0 && allNegative ? 1 : 0;
@@ -19,13 +15,14 @@ export const useCounter = (defaultValue, allNegative = false) => {
     setCount(defaultValue);
   }, []);
 
-  const handleRemove = useCallback(() => {}, []);
+  const handleIncrement = useCallback(() => {
+    setCount((state) => state + 1);
+  }, []);
 
   return {
     count,
-    handleIncrement,
     handleDecrement,
     handleReset,
-    handleRemove,
+    handleIncrement,
   };
 };

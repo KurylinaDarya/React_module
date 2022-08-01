@@ -5,6 +5,9 @@ import Home from "../pages/Home";
 import CounterContainer from "../pages/Counter/containers/CounterContainer";
 import FunctionalCounterContainer from "../pages/FunctionalCounter/containers/FunctionalCounterContainer";
 import CountersManagerContainer from "../pages/CountersManager/container/CountersManagerContainer";
+import FormContainer from "../pages/Forms/container/FormContainer";
+import TodoListContainer from "../pages/TodoList/container/TodoListContainer";
+import ReduxTodoListContainer from "../pages/ReduxTodoList/container/ReduxTodoListContainer";
 
 const Router = () => {
   return (
@@ -18,6 +21,12 @@ const Router = () => {
       <Route
         path={ROUTE_NAMES.COUNTERS_MANAGER}
         element={<CountersManagerContainer />}
+      />
+      <Route path={ROUTE_NAMES.FORMS} element={<FormContainer />} />
+      <Route path={ROUTE_NAMES.TODO_LIST} element={<TodoListContainer />} />
+      <Route
+        path={ROUTE_NAMES.REDUX_TODO_LIST}
+        element={<ReduxTodoListContainer />}
       />
     </Routes>
   );

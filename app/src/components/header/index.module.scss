@@ -1,0 +1,13 @@
+.menuItem {
+  color: rgb(19, 220, 220);
+  border: 2px solid grey;
+  border-radius: 15px;
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
